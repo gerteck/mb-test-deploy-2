@@ -1,0 +1,15 @@
+environment:
+  nodejs_version: '16'
+
+branches:
+  only:
+    - main
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm i -g markbind-cli
+  - markbind deploy --ci
+
+test: off
+
+build: off
