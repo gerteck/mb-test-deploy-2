@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 20
+dist: focal
+install:
+  - npm i -g markbind-cli
+script: markbind build
+deploy:
+  provider: script
+  script: markbind deploy --ci
+  skip_cleanup: true
+  on:
+    branch: main
