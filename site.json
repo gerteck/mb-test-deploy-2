@@ -24,5 +24,12 @@
   ],
   "deploy": {
     "message": "Site Update."
-  }
+  },
+  "enableSearch": true,
+  "plugins" : [
+    "codeBlockWrapButtons",
+    "codeBlockCopyButtons",
+    "dataTable",
+    "algolia"
+  ]
 }
