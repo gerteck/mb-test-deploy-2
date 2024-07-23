@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 5.5.2">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found</title> <link rel="stylesheet" href="/mb-test-deploy-2/markbind/css/bootstrap.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/markbind/css/codeblock-dark.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/markbind/css/markbind.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/mb-test-deploy-2/plugins/markbind-plugin-tree/markbind-plugin-tree.css"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found</title> <link rel="stylesheet" href="/mb-test-deploy-2/markbind/css/bootstrap.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/markbind/css/codeblock-dark.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/markbind/css/markbind.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/plugins/dataTable/datatables.min.css"><link rel="stylesheet" href="/mb-test-deploy-2/plugins/dataTable/datatables-additional.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.2.0/dist/style.css"><link rel="preconnect" href="https://undefined-dsn.algolia.net" crossorigin><link rel="stylesheet" href="/mb-test-deploy-2/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/mb-test-deploy-2/plugins/markbind-plugin-tree/markbind-plugin-tree.css"></head>
 <script>
   const baseUrl = '/mb-test-deploy-2'
 </script>
@@ -18,4 +18,84 @@
 <script>
   MarkBind.setupWithSearch()
 </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+      } else {
+          classList.add('wrap')
+      }
+    }
+    </script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+    <script src="/mb-test-deploy-2/plugins/dataTable/datatables.min.js"></script>
+    
+  <script>
+    function getTableOptions(el) {
+      const options = {};
+      if ($(el).hasClass('sortable-table')) {
+        options.searching = false;
+        options.paging = false;
+        options.info = false;
+      } else if ($(el).hasClass('searchable-table')) {
+        options.ordering = false;
+        options.paging = false;
+        options.info = false;
+        options.dom = '<"row"<"col-sm-12"f>>' + '<"row"<"col-sm-12"t>>';
+      } else if ($(el).hasClass('sortable-searchable-table')) {
+        options.paging = false;
+        options.info = false;
+        options.dom = '<"row"<"col-sm-12"f>>' + '<"row"<"col-sm-12"t>>';
+      }
+      return options;
+    }
+
+    Vue.directive('datatable', {
+      inserted: function(el, binding) {
+        const options = binding.value || {};
+        const tableOptions = getTableOptions(el);
+        $(el).DataTable({ ...tableOptions, ...options });
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      $('table.sortable-table, table.searchable-table, table.sortable-searchable-table').each(function() {
+        const options = getTableOptions(this);
+        $(this).DataTable(options);
+      });
+    });
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.2.0/dist/umd/index.js"></script>
+    <script>
+    docsearch({
+      container: "#algolia-search-input",
+      appId: "undefined",
+      apiKey: "undefined",
+      indexName: "undefined",
+      searchParameters: {}
+    });
+  </script>
+    <script>
+    const style = document.createElement('style');
+    style.innerHTML = ".DocSearch-Container { z-index: 1002; position: fixed; }";
+    document.getElementsByTagName('head')[0].appendChild(style);
+  </script>
+  
 </html>

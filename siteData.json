@@ -8,6 +8,18 @@
       "headingKeywords": {}
     },
     {
+      "src": "contents/a.md",
+      "title": "Page A",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "contents/b.md",
+      "title": "Page B",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
       "src": "contents/topic1.md",
       "title": "Topic 1",
       "headings": {
