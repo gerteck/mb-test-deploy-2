@@ -18,3 +18,4 @@
 <br>
 
 * Test AppVeyor CI for Deployment ✅
+* Test CircleCI for Deployment (Node 18) ✅

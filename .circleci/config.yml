@@ -5,7 +5,7 @@ jobs:
     steps:
       - checkout
       - node/install:
-          node-version: "16"
+          node-version: "18"
           npm-version: "8"
           install-yarn: false
       - run: node --version
