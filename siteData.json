@@ -54,9 +54,7 @@
     {
       "src": "index.md",
       "title": "Home Page",
-      "headings": {
-        "what-just-happened": "What just happened?"
-      },
+      "headings": {},
       "headingKeywords": {}
     }
   ]
