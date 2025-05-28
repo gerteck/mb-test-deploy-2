@@ -1,0 +1,91 @@
+<frontmatter>
+  layout: default.md
+  pageNav: 2
+  pageNavTitle: "Chapters of This Page"
+</frontmatter>
+
+## Test Code Include
+<!-- 
+<panel header="Test Code Includes." src="testCodeInclude.md" /> -->
+
+hello
+
+
+<panel header="Test Code Includes.">
+
+test **markdown** 
+
+whether it works inside the *box*
+
+BEFORE CODE BLOCK
+
+```
+
+Some code
+```
+
+Everything else here does not show
+
+</panel>
+
+```
+
+Some code
+```
+
+Everything else here does not show
+HELLLO
+<br>
+
+<br>
+
+<br>
+
+## Mermaid Testing
+
+<mermaid>
+pie title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15
+</mermaid>
+
+**Mermaid Test**
+
+
+</mermaid>
+
+<mermaid>
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+</mermaid>
+
+<br>
+
+<panel type="minimal" header="This is to test Mermaid diagrams work in panel.">
+<mermaid>
+pie title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15
+</mermaid>
+</panel> 
+
+
+## INCLUDES
+
+<include src="testMermaidInclude.md" />
+
+## PANEL 
+
+<panel type="minimal" header="This is to test Mermaid diagrams works when included inside a panel." src="testMermaidInclude.md" />
+

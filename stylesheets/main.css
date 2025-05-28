@@ -61,16 +61,16 @@ mark {
     transition: 0.4s;
 }
 
-#site-nav,
+#site-nav-a,
 #page-nav {
     display: flex;
     flex-direction: column;
     position: sticky;
     top: var(--sticky-header-height);
     flex: 0 0 auto;
-    max-width: 300px;
+    max-width: 500px;
     max-height: calc(100vh - var(--sticky-header-height));
-    width: 300px;
+    width: 500px;
 }
 
 #site-nav {

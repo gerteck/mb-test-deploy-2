@@ -1,7 +1,8 @@
 {
-  "baseUrl": "/mb-test-deploy-2",
+  "baseUrl": "",
   "titlePrefix": "",
   "titleSuffix": "",
+  "enableSearch": "false",
   "ignore": [
     "_markbind/layouts/*",
     "_markbind/logs/*",
@@ -13,6 +14,22 @@
     ".gitignore",
     "node_modules/*"
   ],
+  "plugins": [
+    "mermaid",
+    "codeBlockWrapButtons",
+    "codeBlockCopyButtons"
+  ],
+  "pluginsContext" : {
+    "filterTags" : {
+      "tags": ["environment--combined"]
+    },
+    "mathDelimiters": {
+      "delimiters": ["beg_end"]
+    },
+    "web3Form": {
+      "accessKey": [""]
+    }
+  },
   "pagesExclude": ["node_modules/*"],
   "pages": [
     {
@@ -24,12 +41,5 @@
   ],
   "deploy": {
     "message": "Site Update."
-  },
-  "enableSearch": true,
-  "plugins" : [
-    "codeBlockWrapButtons",
-    "codeBlockCopyButtons",
-    "dataTable",
-    "algolia"
-  ]
+  }
 }
