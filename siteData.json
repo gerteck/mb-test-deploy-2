@@ -53,7 +53,8 @@
     {
       "src": "index.md",
       "headings": {
-        "test-code-include": "Test Code Include"
+        "test-code-include": "Test Code Include",
+        "test-again": "Test again"
       },
       "headingKeywords": {}
     },
