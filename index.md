@@ -8,8 +8,8 @@
 
 
 
-<panel header="Test Code Includes." src="testCodeInclude.md" />
+<panel header="Test Code Includes." src="./testCodeInclude.md" />
 
-Test again
+## Test again
 
 <include src="testCodeInclude.md" />
