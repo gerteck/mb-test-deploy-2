@@ -1,0 +1,258 @@
+
+
+## OK Components
+
+* Breadcrumbs
+* Scroll to top Button
+
+## Panels
+
+<panel header="This is your header for a Panel, click me to expand!">
+<markdown>_markdown_</markdown>
+<p>plain text ...</p>
+</panel>
+
+### Load in from source 
+
+<panel header="Content loaded in from 'src'" src="./question.md#fragment" minimized></panel>
+
+
+## Pics
+
+<pic src="https://markbind.org/images/logo-lightbackground.png" width="500" alt="Logo" lazy>
+  MarkBind Logo
+</pic>
+
+## Searchbars
+
+<searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar>
+<searchbar :data="searchData" placeholder="Search (Right-aligned dropdown)" :on-hit="searchCallback" menu-align-right></searchbar>
+
+## Thumbnails
+
+<thumbnail text=":book:" background="#dff5ff" size="100"/>
+<thumbnail text="___CS___" background="#333" font-color="white" size="100"/>
+<thumbnail text=":fas-book:" font-color="darkgreen" border="3px solid darkgreen" size="100"/>
+
+
+## Trigger and Modals
+
+More about <trigger for="modal:loremipsum">trigger</trigger>.
+<modal header="**Modal header** :rocket:" id="modal:loremipsum">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</modal>
+<br>
+This is the same <trigger for="modal:loremipsum">trigger</trigger> as last one.
+
+
+## ToolTips
+
+<tooltip content="Lorem ipsum dolor sit amet" placement="top">
+  <button class="btn btn-secondary">Tooltip on top</button>
+</tooltip>
+<tooltip content="Lorem ipsum dolor sit amet" placement="left">
+  <button class="btn btn-secondary">Tooltip on left</button>
+</tooltip>
+<tooltip content="Lorem ipsum dolor sit amet" placement="right">
+  <button class="btn btn-secondary">Tooltip on right</button>
+</tooltip>
+<tooltip content="Lorem ipsum dolor sit amet" placement="bottom">
+  <button class="btn btn-secondary">Tooltip on bottom</button>
+</tooltip>
+<hr />
+
+Trigger
+<p>
+  <tooltip content="Lorem ipsum dolor sit amet" placement="top" trigger="click">
+    <button class="btn btn-secondary">Click</button>
+  </tooltip>
+</p>
+<p>
+  <tooltip content="Lorem ipsum dolor sit amet" placement="top" trigger="focus">
+    <input placeholder="Focus"></input>
+  </tooltip>
+</p>
+<hr />
+
+**Markdown**:
+<tooltip content="*Hello* **World**">
+  <a href="">Hover me</a>
+</tooltip>
+<br />
+
+**Free Text**:
+<tooltip content="coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
+
+---
+
+
+## Popovers
+
+<popover content="Lorem ipsum dolor sit amet" placement="top">
+  <button class="btn btn-secondary">Popover on top</button>
+</popover>
+<popover content="Lorem ipsum dolor sit amet" placement="left">
+  <button class="btn btn-secondary">Popover on left</button>
+</popover>
+<popover content="Lorem ipsum dolor sit amet" placement="right">
+  <button class="btn btn-secondary">Popover on right</button>
+</popover>
+<popover content="Lorem ipsum dolor sit amet" placement="bottom">
+  <button class="btn btn-secondary">Popover on bottom</button>
+</popover>
+<hr>
+<h4 class="no-index">Header</h4>
+<popover header="Header" content="Lorem ipsum dolor sit amet" placement="top">
+  <button class="btn btn-secondary">Popover on top</button>
+</popover>
+<popover header="Header" content="Lorem ipsum dolor sit amet" placement="left">
+  <button class="btn btn-secondary">Popover on left</button>
+</popover>
+<popover header="Header" content="Lorem ipsum dolor sit amet" placement="right">
+  <button class="btn btn-secondary">Popover on right</button>
+</popover>
+<popover header="Header" content="Lorem ipsum dolor sit amet" placement="bottom">
+  <button class="btn btn-secondary">Popover on bottom</button>
+</popover>
+<hr />
+<h4 class="no-index">Trigger</h4>
+<div>
+  <popover header="Header" content="Lorem ipsum dolor sit amet" placement="top" trigger="hover">
+    <button class="btn btn-secondary">Mouseenter</button>
+  </popover>
+</div>
+<h4 class="no-index">Markdown</h4>
+<div>
+  <popover header="**Emoji header** :rocket:" content="!!emoji!! content :cat:">
+    <button class="btn btn-secondary">Hover</button>
+  </popover>
+</div>
+<h4 class="no-index">Content using slot</h4>
+<div>
+  <popover header="**Emoji header** :rocket:">
+    <div slot="content">
+      This is a long content...
+    </div>
+    <button class="btn btn-secondary">Hover</button>
+  </popover>
+</div>
+<h4 class="no-index">Content using src</h4>
+<div>
+  <popover header="From a MarkDown file" src="/404.md">
+    This is loaded from a .md file
+  </popover>
+</div>
+<h4 class="no-index">Wrap Text</h4>
+<div>
+  <popover header="false" content="Nice!">What do you say</popover>
+</div>
+
+
+## Dropdowns
+
+<!--Notice how header attribute supports inline MarkDown-->
+<dropdown header="*Action*" type="primary">
+  <li>hello</li>
+</dropdown>
+
+<dropdown header="*Multi-Level Dropdown*" type="primary">
+  <li><a href="#dropdown" class="dropdown-item">Item</a></li>
+  <li><a href="#dropdown" class="dropdown-item">Another item</a></li>
+  <dropdown header="*Submenu*">
+    <li><a href="#dropdown" class="dropdown-item">Item</a></li>
+    <li><a href="#dropdown" class="dropdown-item">Another item</a></li>
+  </dropdown>
+</dropdown>
+
+## Questions
+
+<question type="mcq" header="Which of these **contradicts** the heuristics recommended when creating test cases with multiple inputs?">
+  <!-- Insert the reason for the option using the reason attribute -->
+  <q-option reason="This is **correct**. We need to figure out if a positive test case works!">
+    Each valid test input should appear at least once in a test case that doesn’t have any invalid inputs.
+  </q-option>
+  <q-option>
+    It is ok to combine valid values for different inputs.
+  </q-option>
+  <q-option>
+    No more than one invalid test input should be in a given test case.
+  </q-option>
+  <!-- Use the 'correct' attribute to indicate an option as correct. -->
+  <q-option correct>
+    All invalid test inputs must be tested together.
+    <!-- Optionally, you may use a reason slot instead of a reason attribute. -->
+    <div slot="reason">
+    If you test all invalid test inputs together, you will not know if each one of the invalid inputs are handled
+    correctly by the SUT.
+    This is because most SUTs return an error message upon encountering the first invalid input.
+    </div>
+  </q-option>
+  <div slot="hint">
+  How do you figure out which inputs are wrong? (or correct)
+  </div>
+</question>
+
+
+
+
+## Annotations
+
+<annotate src="./picture.png" width="100" alt="Sample Image" lazy>
+  <!-- Minimal Point -->
+  <a-point x="25%" y="25%" content="This point is 25% from the left and 25% from the top" />
+  <!-- Customize Point Size (default size is 40px) -->
+  <a-point x="50%" y="25%" content="This point is 50% from the left and 25% from the top"  size="60"/>
+  <!-- Customize Point Header (default is empty) -->
+  <a-point x="75%" y="25%" content="This point is 75% from the left and 25% from the top"  header="This has a header"/>
+  <!-- Customize Point Color (default color is green) -->
+  <a-point x="25%" y="50%" content="This point is 25% from the left and 50% from the top"  color="red"/>
+  <!-- Customize Point Opacity (default opacity is 0.3) -->
+  <a-point x="50%" y="50%" content="This point is 50% from the left and 50% from the top"  opacity="0.7"/>
+  <!-- Customize Point Label (default is empty) -->
+  <a-point x="25%" y="75%" content="This point is 25% from the left and 75% from the top" label="1"/>
+  <!-- Customize Text Color (default color is black) -->
+  <a-point x="50%" y="75%" content="This point is 50% from the left and 75% from the top"  textColor="white" color="black" label="2" opacity="1"/>
+  <!-- Customize Font Size (default font size is 14) -->
+  <a-point x="75%" y="75%" content="This point is 75% from the left and 75% from the top"  fontSize="30" label="3"/>
+  <!-- Customize Label (default is a rounded button) -->
+  <a-point x="75%" y="50%" content="This point is 75% from the left and 50% from the top">
+    <span class="badge bg-primary">Badge label</span>
+  </a-point>
+</annotate>
+
+## Tabs
+
+<tabs>
+  <tab header="First tab">
+    Text in the first tab
+    <markdown>_some markdown_</markdown>
+  </tab>
+  <tab header="Disabled second tab :x:" disabled>
+  </tab>
+  <tab header="Tab not printed" class="d-print-none">
+    This tab will not be printed.
+  </tab>
+  <tab-group header="Third tab group :milky_way:">
+    <tab header="Stars :star:">
+      Some stuff about stars ...
+    </tab>
+    <tab header="Disabled Moon :new_moon:" disabled>
+    </tab>
+  </tab-group>
+  <tab-group header="Disabled fourth tab group" disabled>
+    <tab header="Hidden tab">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper ultrices lobortis.
+    </tab>
+  </tab-group>
+</tabs>
+
+
+
+
+<br>
+
+
+Test Test

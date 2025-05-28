@@ -1,9 +1,8 @@
 {
-  "enableSearch": true,
+  "enableSearch": "false",
   "pages": [
     {
       "src": "404.md",
-      "title": "Page not found",
       "headings": {},
       "headingKeywords": {}
     },
@@ -53,7 +52,23 @@
     },
     {
       "src": "index.md",
-      "title": "Home Page",
+      "headings": {
+        "test-code-include": "Test Code Include"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "question.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "testCodeInclude.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "testMermaidInclude.md",
       "headings": {},
       "headingKeywords": {}
     }
